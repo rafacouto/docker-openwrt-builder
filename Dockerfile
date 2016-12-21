@@ -11,18 +11,18 @@ RUN apt-get update \
 
 ENV OPENWRT_RELEASE=v15.05.1 \
 	OPENWRT_TARGET=rpi3 \
-	WORKDIR=/usr/src/openwrt
+	WORKDIR=/usr/local/openwrt
 
-VOLUME ["$WORKDIR"]
+VOLUME ["$WORKDIR/src"]
 
-ADD config $WORKDIR/target-configs
-ADD scripts/* $WORKDIR/docker-scripts
+ADD configs $WORKDIR/configs
+ADD scripts/* $WORKDIR/scripts
 
 RUN git clone --branch $OPENWRT_RELEASE \
-	https://github.com/openwrt/openwrt.git $WORKDIR
+	https://github.com/openwrt/openwrt.git $WORKDIR/src
 
-WORKDIR $WORKDIR
+WORKDIR $WORKDIR/src
 
-CMD ["$WORKDIR/docker-scripts/build.sh", "$OPENWRT_TARGET"]
+CMD ["$WORKDIR/scripts/build.sh", "$OPENWRT_TARGET"]
 
 

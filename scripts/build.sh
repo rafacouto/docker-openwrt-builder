@@ -2,7 +2,9 @@
 
 # ToDo: show target options
 
-# ToDo: test target config
+# ToDo
+echo 'ToDo: examine targets from env vars...'
+exit 0
 
 cp "$WORKDIR/target-configs/$OPENWRT_TARGET.diff" \
 	"$WORKDIR/.config" && exit 1
