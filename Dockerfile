@@ -13,6 +13,8 @@ ENV OPENWRT_RELEASE=v15.05.1 \
 	OPENWRT_TARGET=rpi3 \
 	WORKDIR=/usr/src/openwrt
 
+VOLUME ["$WORKDIR"]
+
 ADD config $WORKDIR/target-configs
 ADD scripts/* $WORKDIR/docker-scripts
 
