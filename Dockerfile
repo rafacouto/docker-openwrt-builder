@@ -16,10 +16,7 @@ ENV OPENWRT_RELEASE=v15.05.1 \
 VOLUME ["$WORKDIR/src"]
 
 ADD configs $WORKDIR/configs
-ADD scripts/* $WORKDIR/scripts
-
-RUN git clone --branch $OPENWRT_RELEASE \
-	https://github.com/openwrt/openwrt.git $WORKDIR/src
+ADD scripts $WORKDIR/scripts
 
 WORKDIR $WORKDIR/src
 

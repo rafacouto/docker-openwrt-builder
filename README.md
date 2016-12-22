@@ -34,7 +34,7 @@ will show the help:
 
 ## Thanks
 
-- [Javier Loureiro](https://twitter.com/StaticBoardsES) who has the idea for Raspberry Pi devices and provided config files for those ones.
+- [Javier Loureiro](https://twitter.com/StaticBoardsES) who had the idea for Raspberry Pi devices and provided config files for them.
 - [OpenWRT community](https://openwrt.org/) for its great product.
 
 
