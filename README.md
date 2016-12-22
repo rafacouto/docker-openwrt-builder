@@ -47,7 +47,7 @@ Directory with the binaries result of the build:
 
     docker run \
         -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder \
-        -v $(pwd)/src:/usr/local/openwrt/src/bin
+        -v $(pwd)/binaries:/usr/local/openwrt/src/bin
 
 ## Docker variables
 
