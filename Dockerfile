@@ -9,7 +9,7 @@ RUN apt-get update \
 		gawk subversion mercurial wget gettext \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV WORKDIR="/usr/local/openwrt" OPENWRT_RELEASE="v15.05.1"
+ENV WORKDIR="/usr/local/openwrt" OPENWRT_RELEASE="master"
 
 WORKDIR $WORKDIR
 

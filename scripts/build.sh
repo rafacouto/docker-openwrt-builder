@@ -22,10 +22,11 @@ git checkout $OPENWRT_RELEASE
 
 # set the config file
 cp "$OPENWRT_CONFIGS/$OPENWRT_TARGET.diff" "$OPENWRT_SRC/.config" 
+make defconfig
 
 # update feeds
-./scripts/feeds update -a 
-./scripts/feeds install -a 
+#./scripts/feeds update -a 
+#./scripts/feeds install -a 
 
 # available processors
 if [ -z "$JOBS" ] ; then
