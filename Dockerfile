@@ -9,15 +9,15 @@ RUN apt-get update \
 		gawk subversion mercurial wget gettext \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV WORKDIR=/usr/local/openwrt
+ENV WORKDIR="/usr/local/openwrt" OPENWRT_RELEASE="v15.05.1"
+
+WORKDIR $WORKDIR
 
 VOLUME ["$WORKDIR/src"]
 
 ADD configs $WORKDIR/configs
 ADD scripts $WORKDIR/scripts
 
-WORKDIR $WORKDIR/src
-
-CMD ["../scripts/build.sh"]
+CMD ["scripts/build.sh"]
 
 

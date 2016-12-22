@@ -16,7 +16,7 @@ This image provides a toolchain to build OpenWRT for different hardware devices.
 
 ## Usage
 
-    docker run --rm caligari/openwrt-builder
+    docker run --rm -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
 
 shows the help:
 
@@ -24,7 +24,7 @@ shows the help:
 
 ### Docker volumes
 
-    docker run -v $(pwd)/src:/usr/local/openwrt/src --rm caligari/openwrt-builder
+    docker run -v $(pwd)/src:/usr/local/openwrt/src -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
 
 ### Compile an OpenWRT version to a hardware target
 
