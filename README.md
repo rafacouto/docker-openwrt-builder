@@ -12,12 +12,15 @@ This image provides a toolchain to build OpenWRT for different hardware devices.
 ### From Dockerfile
 
     git clone git@github.com:rafacouto/docker-openwrt-builder.git
-    cd docker-openwrt-builder
-    docker build -t caligari/openwrt-builder .
+    docker build -t caligari/openwrt-builder:latest ./docker-openwrt-builder
 
 ## Usage
 
-    docker run -v $(pwd):/usr/local/openwrt/src --rm caligari/openwrt-builder
+    docker run --rm caligari/openwrt-builder
+
+### Docker volumes
+
+    docker run -v $(pwd)/src:/usr/local/openwrt/src --rm caligari/openwrt-builder
 
 will show the help:
 
