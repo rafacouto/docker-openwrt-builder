@@ -24,7 +24,16 @@ shows the help:
 
 ### Docker volumes
 
-    docker run -v $(pwd)/src:/usr/local/openwrt/src -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
+    docker run -v $(pwd)/src:/usr/local/openwrt/src \
+        -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
+
+### Docker variables
+
+    docker run \
+        -e OPENWRT_TARGET=rpi-3 \
+        -e OPENWRT_RELEASE=master \
+        -e JOBS=3 \
+        caligari/openwrt-builder
 
 ### Compile an OpenWRT version to a hardware target
 
