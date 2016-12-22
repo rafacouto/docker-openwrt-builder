@@ -14,6 +14,7 @@ ENV WORKDIR="/usr/local/openwrt" OPENWRT_RELEASE="master"
 WORKDIR $WORKDIR
 
 VOLUME ["$WORKDIR/src"]
+VOLUME ["$WORKDIR/src/bin"]
 
 ADD configs $WORKDIR/configs
 ADD scripts $WORKDIR/scripts

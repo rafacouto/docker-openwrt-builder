@@ -7,6 +7,13 @@ This image provides a toolchain to build OpenWRT for different hardware devices.
 
 Prepare a disk volume with 15Gb free to execute this image. 
 
+### Pull a pre-built image
+
+    docker pull caligari/openwrt-builder:latest
+
+Available [image tags here](https://hub.docker.com/r/caligari/openwrt-builder/tags/).
+
+
 ### From Dockerfile
 
     git clone git@github.com:rafacouto/docker-openwrt-builder.git
@@ -14,20 +21,35 @@ Prepare a disk volume with 15Gb free to execute this image.
 
 ## Usage
 
+Show the __available targets to build__:
+
+    docker run --rm caligari/openwrt-builder
+
+_ToDo: put here the current output of this command._
+
+__Build OpenWRT__ for a Raspberry Pi 3:
+
     docker run --rm -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
 
-shows the help:
+## Docker volumes
 
-    -ToDo-
+### /usr/local/openwrt/src
 
-### Docker volumes
+Directory where OpenWRT sources persist (>= 15Gb):
 
-    docker run -v $(pwd)/src:/usr/local/openwrt/src \
-        -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
+    docker run \
+        -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder \
+        -v $(pwd)/src:/usr/local/openwrt/src
 
-- __/usr/local/openwrt/src__ Directory where OpenWRT sources persist (>= 15Gb).
+### /usr/local/openwrt/src/bin
 
-### Docker variables
+Directory with the binaries result of the build:
+
+    docker run \
+        -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder \
+        -v $(pwd)/src:/usr/local/openwrt/src/bin
+
+## Docker variables
 
     docker run \
         -e OPENWRT_TARGET=rpi-3 \
@@ -39,7 +61,6 @@ shows the help:
 - __OPENWRT\_RELEASE__ OpenWRT version tag/branch to build (default is 'master').
 - __JOBS__ Number of parallel jobs to launch with _make_.
 
-### Compile an OpenWRT version to a hardware target
 
 ## Related info
 
