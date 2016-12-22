@@ -34,5 +34,6 @@ if [ -z "$JOBS" ] ; then
 fi
 
 # compile
+export FORCE_UNSAFE_CONFIGURE=1
 time ionice -c 3 nice -n 19 make -j $JOBS V=s
 
