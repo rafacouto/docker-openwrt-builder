@@ -35,6 +35,6 @@ shows the help:
 ## Thanks
 
 - [Javi Loureiro](https://twitter.com/StaticBoardsES) who had the idea for Raspberry Pi devices and provided config files for them.
-- [OpenWRT community](https://openwrt.org/) for its great product.
+- [OpenWRT community](https://openwrt.org/) for the best embedded operating system based on the Linux kernel.
 
 

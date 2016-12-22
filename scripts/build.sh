@@ -27,8 +27,11 @@ cp "$OPENWRT_CONFIGS/$OPENWRT_TARGET.diff" "$OPENWRT_SRC/.config"
 ./scripts/feeds update -a 
 ./scripts/feeds install -a 
 
-PROCESSORS=$(cat /proc/cpuinfo | grep '^processor' | wc -l)
-JOBS=$(($PROCESSORS - 1))
+# available processors
+if [ -z "$JOBS" ] ; then
+	PROCESSORS=$(cat /proc/cpuinfo | grep '^processor' | wc -l)
+	JOBS=$(($PROCESSORS - 1))
+fi
 
 # compile
 time ionice -c 3 nice -n 19 make -j $JOBS V=s
