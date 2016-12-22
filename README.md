@@ -25,7 +25,7 @@ shows the help:
     docker run -v $(pwd)/src:/usr/local/openwrt/src \
         -e OPENWRT_TARGET=rpi-3 caligari/openwrt-builder
 
-- /usr/local/openwrt/src Directory where OpenWRT sources persist (>= 15Gb).
+- __/usr/local/openwrt/src__ Directory where OpenWRT sources persist (>= 15Gb).
 
 ### Docker variables
 
@@ -35,9 +35,9 @@ shows the help:
         -e JOBS=3 \
         caligari/openwrt-builder
 
-- OPENWRT\_TARGET Device configuration you are building OpenWRT for.
-- OPENWRT\_RELEASE OpenWRT version tag/branch to build (default is 'master').
-- JOBS Number of parallel jobs to launch with _make_
+- __OPENWRT\_TARGET__ Device configuration you are building OpenWRT for.
+- __OPENWRT\_RELEASE__ OpenWRT version tag/branch to build (default is 'master').
+- __JOBS__ Number of parallel jobs to launch with _make_.
 
 ### Compile an OpenWRT version to a hardware target
 
