@@ -4,6 +4,9 @@
 
 # ToDo
 echo 'ToDo: examine targets from env vars...'
+echo "WORKDIR=$WORKDIR"
+echo "OPENWRT_RELEASE=$OPENWRT_RELEASE"
+echo "OPENWRT_TARGET=$OPENWRT_TARGET"
 exit 0
 
 # get the sources

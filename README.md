@@ -18,13 +18,13 @@ This image provides a toolchain to build OpenWRT for different hardware devices.
 
     docker run --rm caligari/openwrt-builder
 
+shows the help:
+
+    -ToDo-
+
 ### Docker volumes
 
     docker run -v $(pwd)/src:/usr/local/openwrt/src --rm caligari/openwrt-builder
-
-will show the help:
-
-    -ToDo-
 
 ### Compile an OpenWRT version to a hardware target
 
@@ -34,7 +34,7 @@ will show the help:
 
 ## Thanks
 
-- [Javier Loureiro](https://twitter.com/StaticBoardsES) who had the idea for Raspberry Pi devices and provided config files for them.
+- [Javi Loureiro](https://twitter.com/StaticBoardsES) who had the idea for Raspberry Pi devices and provided config files for them.
 - [OpenWRT community](https://openwrt.org/) for its great product.
 
 
