@@ -30,7 +30,7 @@ cp "$OPENWRT_CONFIGS/$OPENWRT_TARGET.diff" "$OPENWRT_SRC/.config"
 # available processors
 if [ -z "$JOBS" ] ; then
 	PROCESSORS=$(cat /proc/cpuinfo | grep '^processor' | wc -l)
-	JOBS=$(($PROCESSORS - 1))
+	JOBS=$(($PROCESSORS + 1))
 fi
 
 # compile
